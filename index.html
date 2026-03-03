@@ -151,13 +151,16 @@
 
             auditCard.classList.add('hidden');
             loadingState.classList.remove('hidden');
+            loadingMsg.innerText = "Steg 1: Ansluter till server...";
             
             try {
+                loadingMsg.innerText = "Steg 2: Skickar data till AI...";
                 const reportData = await getAuditFromAI(formData);
+                loadingMsg.innerText = "Steg 3: Renderar rapport...";
                 renderReport(reportData, formData);
             } catch (err) {
                 console.error("DETALJERAT FEL:", err);
-                alert("Kunde inte generera rapporten. Kontrollera att din API-nyckel är giltig och att du har internetanslutning.");
+                alert("FEL: " + err.message);
                 auditCard.classList.remove('hidden');
                 loadingState.classList.add('hidden');
             }
