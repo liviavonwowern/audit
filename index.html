@@ -131,6 +131,7 @@
 
     <script>
         // --- VIKTIGT: Ersätt med din API-nyckel här ---
+
   const API_KEY = "AIzaSyB3TEVmyatoB9wIDtZ8-OOMsd6iOPu5eZE";
 
         const form = document.getElementById('audit-form');
@@ -186,8 +187,7 @@
             `;
 
             // Använder gemini-3-flash-preview för bäst resultat
-            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${API_KEY}`;
-
+            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${API_KEY}`;
             const response = await fetch(url, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -262,3 +262,5 @@
     </script>
 </body>
 </html>
+
+
