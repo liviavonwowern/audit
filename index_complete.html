@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livia von Wowern | Digital Growth Audit</title>
+    
+    <!-- Bibliotek -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .glass { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); }
+        .loader { border-top-color: #4f46e5; animation: spinner 1.5s linear infinite; }
+        @keyframes spinner { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <!-- NAVIGATION -->
+    <nav class="glass border-b border-slate-100 px-6 py-6 flex justify-between items-center sticky top-0 z-50">
+        <div class="text-xl font-black tracking-tighter">Livia von Wowern<span class="text-indigo-600">.</span></div>
+        <div class="flex items-center gap-6">
+            <a href="tel:0702294244" class="text-sm font-bold hidden sm:block">070-229 42 44</a>
+            <a href="/cdn-cgi/l/email-protection#771b1e011e165900180012051937101a161e1b5914181a" class="px-5 py-2.5 bg-slate-900 text-white font-bold rounded-xl text-xs uppercase tracking-widest hover:bg-indigo-600 transition-all">Kontakt</a>
+        </div>
+    </nav>
+
+    <!-- HERO / FORM SECTION -->
+    <main id="main-content">
+        <section class="max-w-4xl mx-auto px-6 py-20 text-center">
+            <h1 class="text-6xl md:text-8xl font-bold leading-[0.95] mb-8 tracking-tighter">Growth is <br/><span class="text-indigo-600 italic">Calculated.</span></h1>
+            <p class="text-lg text-slate-500 mb-12 max-w-lg mx-auto font-medium">Strategisk analys av SEO, SEM och AI-synlighet för varumärken som vill dominera sin nisch.</p>
+            
+            <div id="audit-card" class="bg-white rounded-[3rem] p-8 md:p-12 shadow-2xl border border-slate-100 text-left max-w-2xl mx-auto">
+                <h3 class="text-2xl font-bold mb-2">Starta din Growth Scan</h3>
+                <p class="text-slate-400 text-[10px] font-bold uppercase tracking-widest mb-10">Kostnadsfri analys baserad på AI-intelligens</p>
+                
+                <form id="audit-form" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <input required id="form-name" type="text" placeholder="Ditt namn" class="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl font-bold text-sm outline-none focus:border-indigo-500 transition-all">
+                        <input required id="form-company" type="text" placeholder="Företag" class="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl font-bold text-sm outline-none focus:border-indigo-500 transition-all">
+                    </div>
+                    <input required id="form-email" type="email" placeholder="E-post" class="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl font-bold text-sm outline-none focus:border-indigo-500 transition-all">
+                    <input required id="form-website" type="url" placeholder="Webbadress (https://...)" class="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl font-bold text-sm outline-none focus:border-indigo-500 transition-all">
+                    
+                    <button type="submit" id="submit-btn" class="w-full py-6 bg-slate-900 hover:bg-indigo-600 text-white font-black rounded-2xl transition-all uppercase tracking-[0.2em] text-xs shadow-xl">
+                        Se din potential nu
+                    </button>
+                </form>
+            </div>
+
+            <div id="loading-state" class="hidden py-20">
+                <div class="loader w-16 h-16 border-4 border-slate-200 rounded-full mx-auto mb-6"></div>
+                <p id="loading-msg" class="text-indigo-600 font-bold uppercase tracking-widest text-xs">Analyserar digitalt fotavtryck...</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- REPORT SECTION -->
+    <section id="report-section" class="hidden min-h-screen py-12 px-6">
+        <div class="max-w-5xl mx-auto">
+            <div class="bg-white rounded-3xl p-6 mb-8 shadow-sm border border-slate-200 flex flex-col md:flex-row justify-between items-center gap-4">
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center text-white font-black text-xs">LVW</div>
+                    <div>
+                        <h4 class="font-bold">Livia von Wowern</h4>
+                        <p class="text-[10px] text-slate-500 font-medium uppercase tracking-widest">Growth Marketing Specialist</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-6">
+                    <a href="tel:0702294244" class="text-sm font-bold hover:text-indigo-600">070-229 42 44</a>
+                    <a href="/cdn-cgi/l/email-protection#375b5e415e561940584052455977505a565e5b1954585a" class="text-sm font-bold hover:text-indigo-600"><span class="__cf_email__" data-cfemail="84e8edf2ede5aaf3ebf3e1f6eac4e3e9e5ede8aae7ebe9">[email&#160;protected]</span></a>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 border-b border-slate-200 pb-8 gap-6">
+                <div>
+                    <h1 id="report-title" class="text-3xl font-bold tracking-tight italic uppercase">FÖRETAG <span class="text-indigo-600">/ GROWTH SCAN</span></h1>
+                    <p id="report-url" class="text-slate-500 text-sm mt-1"></p>
+                </div>
+                <button onclick="location.reload()" class="px-6 py-2.5 bg-slate-900 text-white rounded-xl text-sm font-bold shadow-lg">Ny analys</button>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="lg:col-span-2 bg-white rounded-[2.5rem] p-8 md:p-10 shadow-sm border border-slate-200">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 text-center">
+                        <div>
+                            <div id="seo-score" class="text-4xl font-black text-indigo-600">0%</div>
+                            <div class="text-[10px] font-bold uppercase tracking-widest text-slate-400 mt-2">Organic SEO</div>
+                        </div>
+                        <div>
+                            <div id="sem-score" class="text-4xl font-black text-slate-900">0%</div>
+                            <div class="text-[10px] font-bold uppercase tracking-widest text-slate-400 mt-2">Paid Search</div>
+                        </div>
+                        <div>
+                            <div id="geo-score" class="text-4xl font-black text-emerald-500">0%</div>
+                            <div class="text-[10px] font-bold uppercase tracking-widest text-slate-400 mt-2">AI / GEO</div>
+                        </div>
+                    </div>
+                    <div id="trend-chart" class="h-64 w-full"></div>
+                </div>
+
+                <div class="bg-indigo-600 rounded-[2.5rem] p-10 text-white shadow-2xl flex flex-col justify-center">
+                    <h3 class="text-indigo-200 text-[10px] font-bold uppercase tracking-widest mb-4">Strategic Upside</h3>
+                    <div id="growth-val" class="text-7xl font-bold mb-4">+0%</div>
+                    <p class="text-indigo-100 text-sm leading-relaxed font-medium">Beräknad intäktsökning genom optimering av hela tratten.</p>
+                </div>
+
+                <div class="bg-white rounded-[2.5rem] p-10 shadow-sm border border-slate-200">
+                    <h3 class="text-lg font-bold mb-8 flex items-center gap-3"><i class="fas fa-chart-pie text-indigo-600"></i>Marknadsanalys</h3>
+                    <div id="competitor-list" class="space-y-6"></div>
+                </div>
+
+                <div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-[2.5rem] p-10 shadow-sm border border-slate-200">
+                        <h3 class="text-lg font-bold mb-6 flex items-center gap-3"><i class="fas fa-key text-indigo-600"></i>Viktiga Sökord</h3>
+                        <div id="keyword-list" class="flex flex-wrap gap-2"></div>
+                    </div>
+                    <div class="bg-white rounded-[2.5rem] p-10 shadow-sm border border-slate-200">
+                        <h3 class="text-lg font-bold mb-6 flex items-center gap-3"><i class="fas fa-lightbulb text-indigo-600"></i>Rekommendationer</h3>
+                        <ul id="tip-list" class="space-y-4"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+        const PROXY_URL = "https://audit-api-vercel.vercel.app/api/audit";
+
+        const form = document.getElementById('audit-form');
+        const auditCard = document.getElementById('audit-card');
+        const loadingState = document.getElementById('loading-state');
+        const loadingMsg = document.getElementById('loading-msg');
+        const reportSection = document.getElementById('report-section');
+        const mainContent = document.getElementById('main-content');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const formData = {
+                name: document.getElementById('form-name').value,
+                company: document.getElementById('form-company').value,
+                email: document.getElementById('form-email').value,
+                website: document.getElementById('form-website').value
+            };
+
+            auditCard.classList.add('hidden');
+            loadingState.classList.remove('hidden');
+            
+            try {
+                const reportData = await getAuditFromAI(formData);
+                renderReport(reportData, formData);
+            } catch (err) {
+                console.error("DETALJERAT FEL:", err);
+                alert("Kunde inte generera rapporten. Kontrollera att din API-nyckel är giltig och att du har internetanslutning.");
+                auditCard.classList.remove('hidden');
+                loadingState.classList.add('hidden');
+            }
+        });
+
+        async function getAuditFromAI(data) {
+            const prompt = `
+                Conduct a high-level Strategic Digital Growth Audit for:
+                Website: ${data.website}
+                Company: ${data.company}
+                
+                Return a detailed analysis in JSON format:
+                {
+                    "seoScore": number, "semScore": number, "geoScore": number,
+                    "predictedGrowth": number, "estimatedSavings": number,
+                    "competitors": [{"name": string, "score": number, "advantage": string}],
+                    "keywords": [string], "croTips": [string], "summary": string,
+                    "marketTrend": [{"label": string, "value": number}]
+                }
+            `;
+
+            const response = await fetch(PROXY_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ website: data.website, company: data.company })
+            });
+
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.error || "API-anrop misslyckades");
+            }
+
+            return await response.json();
+        }
+
+        function renderReport(report, form) {
+            mainContent.classList.add('hidden');
+            reportSection.classList.remove('hidden');
+
+            document.getElementById('report-title').innerHTML = `${form.company} <span class="text-indigo-600">/ GROWTH SCAN</span>`;
+            document.getElementById('report-url').innerText = `Strategisk analys för ${form.website}`;
+            
+            document.getElementById('seo-score').innerText = (report.seoScore || 0) + '%';
+            document.getElementById('sem-score').innerText = (report.semScore || 0) + '%';
+            document.getElementById('geo-score').innerText = (report.geoScore || 0) + '%';
+            document.getElementById('growth-val').innerText = '+' + (report.predictedGrowth || 0) + '%';
+
+            const compList = document.getElementById('competitor-list');
+            compList.innerHTML = (report.competitors || []).map(c => `
+                <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="font-bold text-slate-900">${c.name}</span>
+                        <span class="text-[9px] font-black bg-white px-2 py-1 rounded border border-slate-200 text-indigo-600 uppercase">${c.score}%</span>
+                    </div>
+                    <p class="text-[11px] text-slate-500 italic leading-relaxed">${c.advantage}</p>
+                </div>
+            `).join('');
+
+            document.getElementById('keyword-list').innerHTML = (report.keywords || []).map(k => `
+                <span class="px-3 py-1.5 bg-slate-900 text-white rounded-lg text-[10px] font-black uppercase tracking-widest">${k}</span>
+            `).join('');
+
+            document.getElementById('tip-list').innerHTML = (report.croTips || []).map(t => `
+                <li class="flex gap-3 text-sm text-slate-600 font-medium">
+                    <div class="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-2 flex-shrink-0"></div>
+                    <span>${t}</span>
+                </li>
+            `).join('');
+
+            const options = {
+                series: [{ name: 'Trend', data: (report.marketTrend || []).map(t => t.value) }],
+                chart: { type: 'area', height: 250, toolbar: { show: false }, zoom: { enabled: false } },
+                colors: ['#4f46e5'],
+                dataLabels: { enabled: false },
+                stroke: { curve: 'smooth', width: 3 },
+                xaxis: { categories: (report.marketTrend || []).map(t => t.label), axisBorder: { show: false }, axisTicks: { show: false } },
+                yaxis: { show: false },
+
+                fill: { type: 'gradient', gradient: { shadeIntensity: 1, opacityFrom: 0.4, opacityTo: 0, stops: [0, 90, 100] } },
+                tooltip: { theme: 'light' }
+            };
+            new ApexCharts(document.getElementById('trend-chart'), options).render();
+        }
+
+        }); // end DOMContentLoaded
+    </script>
+</body>
+</html>
